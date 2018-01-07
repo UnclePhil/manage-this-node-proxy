@@ -1,0 +1,49 @@
+<div class="cd-tabs">
+  <!-- Navigation -->
+  <nav class="navbar-inverse" role="navigation" id="navbar-main">
+    <ul class="cd-tabs-navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navCollapse">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">{{title}}</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="nav navbar-nav navbar-right">
+          {{#each enabledServices}}
+            <li>
+              {{#if default}}
+                <a data-content="{{_id}}" class="selected"><span class="{{icon}} fa-lg"></span> {{name}}</a>
+              {{else}}
+                <a data-content="{{_id}}"><span class="{{icon}} fa-lg"></span> {{name}}</a>
+              {{/if}}
+            </li>
+          {{/each}}
+          <li><a id="reload"><span class="fa fa-refresh fa-lg"></span></a></li>
+        </ul>
+      </div>
+    </ul>
+  </nav>
+  <!--end nav bar-->
+
+  <ul class="cd-tabs-content">
+    {{#each enabledServices}}
+      {{#if default}}
+        <li data-content="{{_id}}" class="selected">
+      {{else}}
+        <li data-content="{{_id}}">
+      {{/if}}
+      {{#if proxy}}
+          <iframe sandbox="allow-forms allow-same-origin allow-pointer-lock allow-scripts allow-popups allow-modals" scrolling="auto" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" data-src="/pxy/{{_id}}/"></iframe>
+      {{else}}
+          <iframe sandbox="allow-forms allow-same-origin allow-pointer-lock allow-scripts allow-popups allow-modals" scrolling="auto" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" data-src="{{url}}"></iframe>
+      {{/if}}  
+        </li>
+    {{/each}}
+  </ul>
+</div>
+

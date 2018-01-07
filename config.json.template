@@ -1,0 +1,29 @@
+{
+  "app": {
+    "title": "My Proxy Services",
+    "port": 3000,
+    "urlbase": "",
+    "insecure": true
+  },
+  "services": [
+    {
+      "_id": 1,
+      "name": "Portainer",
+      "default": false,
+      "url": "http://192.168.1.62:9000",
+      "icon": "fa fa-globe",
+      "sort": null,
+      "proxy":true
+    },
+    {
+      "_id": 2,
+      "name": "Nas",
+      "default": false,
+      "url": "https://192.168.1.4:5001",
+      "icon": "fa fa-exchange",
+      "sort": null,
+      "proxy": true
+    }
+    
+  ]
+}
