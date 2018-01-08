@@ -1,18 +1,16 @@
 # manage-this-node-proxy
 
-Variant of [manage-this-node] https://github.com/onedr0p/manage-this-node
+Variant of [manage-this-node](https://github.com/onedr0p/manage-this-node)
 
-This version can also act as proxy for backend who are not directly accessble by the user.  
+This version can also act as proxy for backends who are not directly accessible by the user.  
 
-Ex: join sub services in docker environment
+Ex: join isolated services in docker environment
 
-Due to my usage as proxy in docker environment, I remove all settings & commits features.
+Due to *my* usage as proxy in docker environment, *I decide* to remove all settings & commits features.
 
-The configuration is , for the moment, only in manual (or docker generated) mode
+The configuration is, for the moment, only in manual (or docker generated) mode
 
-Getting Started
----------------
-
+## Getting Started
 ### Prerequisites
 - [Node.js](http://nodejs.org) v4.2.x
 - [Git](https://git-scm.com/downloads) (optional)
@@ -74,12 +72,14 @@ This version was create as frontend for a docker installation with multiple http
 Enhancements
 --------------
 * RBAC is coming
+* API to add services 
 * Docker/swarm generated config (maybe embedded in the application)
-* additional static pages (because i need it)
+* Additional static pages (because i need it)
 
 SECURITY FEATURES
 --------------
-Be carefull, due to some "difficulties" to allow usage of selfsigned certificates, i use the following environment settings
+Be careful, due to some "difficulties" to allow usage of selfsigned certificates on backend, I use the following environment settings
+
 ```node
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0
 ```
